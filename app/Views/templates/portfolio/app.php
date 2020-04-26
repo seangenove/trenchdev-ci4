@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Trenchdev - <?= $pageTitle ?> </title>
+    <title>Trenchdev - Portfolio </title>
     <link href="/sb-ui-kit-pro/css/styles.css" rel="stylesheet"/>
     <!--    <link rel="icon" type="image/x-icon" href="/sb-ui-kit-pro/assets/img/favicon.png" />-->
     <script data-search-pseudo-elements defer

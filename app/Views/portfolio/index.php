@@ -9,7 +9,7 @@
                     <div class="col-xl-8 col-lg-10 text-center">
                         <img class="mb-4" src="/sb-ui-kit-pro/assets/img/avataaars.svg" style="width: 15rem;"/>
                         <h1 class="page-header-title">
-                            I'm <?= $name ?>, welcome to my portfolio!
+                            Hi authenticated user, welcome to your portfolio!
                         </h1>
                         <p class="page-header-text">I am a graphic artist, illustrator, and UI designer specializing in
                             modern, creative design based in Wildemount, TX</p>

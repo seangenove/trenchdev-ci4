@@ -30,6 +30,17 @@ class Validation
 		'single' => 'CodeIgniter\Validation\Views\single',
 	];
 
+    public $registerUser = [
+        'email'        => 'required|valid_email|is_unique[users.email]',
+        'password'     => 'required',
+        'confirmPassword' => 'required|matches[password]'
+    ];
+
+    public $loginUser = [
+        'email'        => 'required|valid_email',
+        'password'     => 'required'
+    ];
+
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------

@@ -32,7 +32,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
 $routes->get('/', 'Home::index');
-$routes->get('/portfolios/(:any)', 'PortfolioController::index/$1');
+$routes->get('/portfolio', 'PortfolioController::index');
+
+// START: Auth
+$routes->get('/register', 'Auth\RegisterController::index');
+$routes->post('/create_user', 'Auth\RegisterController::create');
+$routes->get('/login', 'Auth\LoginController::index');
+$routes->post('/login', 'Auth\LoginController::login');
+$routes->get('/logout', 'Auth\LoginController::logout');
+//END: Auth
 
 
 /**

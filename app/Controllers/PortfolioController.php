@@ -1,27 +1,19 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Helpers\Auth;
 use CodeIgniter\Controller;
-
 
 class PortfolioController extends Controller
 {
-    public function index($username)
+    public function index()
     {
+        $this->session = session();
 
-        switch ($username) {
-            case "seangenove":
-                $name = "Sean";
-                break;
-            default:
-                $name = ucfirst($username);
-                break;
+        if(!Auth::user()) {
+            return redirect()->to('/login');
         }
 
-        $data['pageTitle'] = $name; // Capitalize the first letter
-        $data['name'] = $name; // Capitalize the first letter
-
-        echo view('pages/portfolios/index', $data);
+        echo view('portfolio/index');
     }
 }
