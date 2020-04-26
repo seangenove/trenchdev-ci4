@@ -19,15 +19,9 @@ class PortfolioController extends Controller
                 break;
         }
 
+        $data['pageTitle'] = $name; // Capitalize the first letter
         $data['name'] = $name; // Capitalize the first letter
 
-        return $this->view($data);
-    }
-
-    public function view($data){
-        echo view('templates/portfolio/header', $data);
-        echo view('templates/portfolio/navbar', $data);
         echo view('pages/portfolios/index', $data);
-        echo view('templates/portfolio/footer', $data);
     }
 }

@@ -1,5 +1,3 @@
-</main>
-</div>
 <div id="layoutDefault_footer">
     <footer class="footer pt-10 pb-5 mt-auto bg-dark footer-dark">
         <div class="container">
@@ -72,10 +70,3 @@
         </div>
     </footer>
 </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-<script src="/sb-ui-kit-pro/js/scripts.js"></script>
-</body>
-</html>
