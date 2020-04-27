@@ -1,6 +1,7 @@
 <?php namespace App\Models;
 
 use CodeIgniter\Model;
+use Config\Database;
 
 class User extends Model
 {
@@ -23,16 +24,20 @@ class User extends Model
 
     public static function findById($id)
     {
-        $user = self::find($id);
+        $user = (new User())->find($id);
 
         return $user;
     }
 
     public static function findByEmail($email)
     {
-        $user = self::findColumn($email);
+        $db = Database::connect();
+
+        $queryStatement = "SELECT * FROM users u WHERE u.email = '{$email}'";
+        $user = $db->query($queryStatement)->getRow();
 
         return $user;
     }
-
 }
+
+

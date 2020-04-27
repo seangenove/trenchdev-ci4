@@ -47,7 +47,6 @@ class Login extends BaseController
 
         Auth::login($user);
 
-        // redirect
         return redirect()->to("/portfolio");
     }
 
