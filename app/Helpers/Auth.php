@@ -7,37 +7,21 @@ use Config\Database;
 class Auth
 {
 
-    /**
-     * @var Auth $session
-     */
-    protected static $session = null;
-
-    public function __construct()
-    {
-        self::$session = session();
-    }
-
     public static function login($user)
     {
-        self::initializeSessionVariable();
-
-        self::$session->set('email', $user->email);
+        session()->set('email', $user->email);
     }
 
     public static function logout()
     {
-        self::initializeSessionVariable();
-
-        self::$session->destroy();
+        session()->destroy();
     }
 
     public static function user()
     {
-        self::initializeSessionVariable();
+        $email = session()->get('email');
 
-        $email = self::$session->get('email');
-
-        if(!$email) {
+        if (!$email) {
             return null;
         } else {
             $db = Database::connect();
@@ -46,10 +30,5 @@ class Auth
 
             return $user;
         }
-    }
-
-    public static function initializeSessionVariable()
-    {
-        new Auth();
     }
 }

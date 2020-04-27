@@ -38,7 +38,7 @@
                                     </div>
                                 <?php endif; ?>
 
-                                <form action="/login" method="post">
+                                <form action="/login/authenticate" method="post">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputEmailAddress">Email</label>
                                         <input class="form-control py-4" name="email" type="email"

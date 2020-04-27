@@ -9,11 +9,8 @@
                 <li class="nav-item"><a class="nav-link" href="index.html">Home </a></li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login/logout">Logout</a></li>
             </ul>
-<!--            <a class="btn-primary btn rounded-pill px-4 ml-lg-4"-->
-<!--               href="https://shop.startbootstrap.com/sb-ui-kit-pro">Contact<i-->
-<!--                    class="fas fa-arrow-right ml-1"></i></a>-->
         </div>
     </div>
 </nav>

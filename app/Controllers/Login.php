@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Controllers\Auth;
+namespace App\Controllers;
 
 use App\Helpers\Auth;
 use CodeIgniter\Controller;
 use Config\Database;
 
-class LoginController extends Controller
+class Login extends Controller
 {
     public function index()
     {
+
+        if (Auth::user()) {
+            return redirect()->to('/portfolio');
+        }
+
         $data = [];
-        $this->session = session();
-
-        $this->checkIfAuthenticated();
-
-        $validation = $this->session->getFlashdata('validation');
+        $validation = session()->getFlashdata('validation');
 
         if ($validation) {
             $data = [
@@ -26,14 +27,11 @@ class LoginController extends Controller
         echo view('auth/login', $data);
     }
 
-    public function login()
+    public function authenticate()
     {
 
-        $this->session = session();
-
-        // data validation
         if (!$this->validate('loginUser')) {
-            $this->session->setFlashdata('validation', $this->validator);
+            session()->setFlashdata('validation', $this->validator);
 
             return redirect()->back()->withInput();
         }
@@ -46,7 +44,7 @@ class LoginController extends Controller
         $user = $db->query($queryStatement)->getRow();
 
         if (!$user || !password_verify($password, $user->password)) {
-            $this->session->setFlashdata('errorMessage', "Invalid email or password");
+            session()->setFlashdata('errorMessage', "Invalid email or password");
 
             return redirect()->to('/login');
         }
@@ -62,11 +60,5 @@ class LoginController extends Controller
         Auth::logout();
 
         return redirect()->to('/');
-    }
-
-    protected function checkIfAuthenticated(){
-        if (Auth::user()) {
-            return redirect()->to('/portfolio');
-        }
     }
 }

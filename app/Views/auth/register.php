@@ -34,12 +34,12 @@
                                     </div>
                                 <?php elseif (isset($validation)) : ?>
                                     <div class="row text-danger">
-                                        <p class="pl-1 mb-1">Something went wrong with your registration credentials</p>
+                                        <p class="pl-1 mb-1">The following errors were encountered</p>
                                         <?= $validation->listErrors() ?>
                                     </div>
                                 <?php endif; ?>
 
-                                <form action="/create_user" method="post">
+                                <form action="/register/create" method="post">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputEmailAddress">Email</label>
                                         <input

@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Helpers\Auth;
 use CodeIgniter\Controller;
 
-class PortfolioController extends Controller
+class Portfolio extends Controller
 {
     public function index()
     {

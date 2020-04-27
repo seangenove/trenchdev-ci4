@@ -1,22 +1,23 @@
 <?php
 
-namespace App\Controllers\Auth;
+namespace App\Controllers;
 
 use App\Helpers\Auth;
 use App\Models\User;
 use CodeIgniter\Controller;
 
 
-class RegisterController extends Controller
+class Register extends Controller
 {
     public function index()
     {
+
+        if (Auth::user()) {
+            return redirect()->to('/portfolio');
+        }
+
         $data = [];
-        $this->session = session();
-
-        $this->checkIfAuthenticated();
-
-        $validation = $this->session->getFlashdata('validation');
+        $validation = session()->getFlashdata('validation');
 
         if ($validation) {
             $data = [
@@ -31,11 +32,8 @@ class RegisterController extends Controller
     {
 
         if (! $this->validate('registerUser')) {
-            $this->session = session();
+            session()->setFlashdata('validation', $this->validator);
 
-            $this->session->setFlashdata('validation', $this->validator);
-
-            // problematic in Valet, discuss w/ Chris (being redirected back to localhost:8080)
             return redirect()->back()->withInput();
         }
 
@@ -46,11 +44,5 @@ class RegisterController extends Controller
         ]);
 
         return redirect()->to('/');
-    }
-
-    protected function checkIfAuthenticated(){
-        if (Auth::user()) {
-            return redirect()->to('/portfolio');
-        }
     }
 }
