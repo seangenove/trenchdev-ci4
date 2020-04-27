@@ -4,8 +4,6 @@ namespace App\Controllers;
 
 use App\Helpers\Auth;
 use App\Models\User;
-use CodeIgniter\Controller;
-
 
 class Register extends BaseController
 {

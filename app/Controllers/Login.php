@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Helpers\Auth;
-use Config\Database;
+use App\Models\User;
 
 class Login extends BaseController
 {
@@ -35,14 +35,11 @@ class Login extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $email = $this->request->getVar('email');
-        $password = $this->request->getVar('password');
+        $data = $this->request->getPost();
 
-        $db = Database::connect();
-        $queryStatement = "SELECT * FROM users u WHERE u.email = '{$email}'";
-        $user = $db->query($queryStatement)->getRow();
+        $user = User::findByEmail($data['email']);
 
-        if (!$user || !password_verify($password, $user->password)) {
+        if (!$user || !password_verify($data['password'], $user->password)) {
             $this->session->setFlashdata('errorMessage', "Invalid email or password");
 
             return redirect()->to('/login');
