@@ -7,17 +7,17 @@ use App\Models\User;
 use CodeIgniter\Controller;
 
 
-class Register extends Controller
+class Register extends BaseController
 {
     public function index()
     {
-
         if (Auth::user()) {
+            // Not authenticated
             return redirect()->to('/portfolio');
         }
 
         $data = [];
-        $validation = session()->getFlashdata('validation');
+        $validation = $this->session->getFlashdata('validation');
 
         if ($validation) {
             $data = [
@@ -32,7 +32,7 @@ class Register extends Controller
     {
 
         if (! $this->validate('registerUser')) {
-            session()->setFlashdata('validation', $this->validator);
+            $this->session->setFlashdata('validation', $this->validator);
 
             return redirect()->back()->withInput();
         }

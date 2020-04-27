@@ -3,20 +3,19 @@
 namespace App\Controllers;
 
 use App\Helpers\Auth;
-use CodeIgniter\Controller;
 use Config\Database;
 
-class Login extends Controller
+class Login extends BaseController
 {
     public function index()
     {
-
         if (Auth::user()) {
+            // Not authenticated
             return redirect()->to('/portfolio');
         }
 
         $data = [];
-        $validation = session()->getFlashdata('validation');
+        $validation = $this->session->getFlashdata('validation');
 
         if ($validation) {
             $data = [
@@ -31,7 +30,7 @@ class Login extends Controller
     {
 
         if (!$this->validate('loginUser')) {
-            session()->setFlashdata('validation', $this->validator);
+            $this->session->setFlashdata('validation', $this->validator);
 
             return redirect()->back()->withInput();
         }
@@ -44,7 +43,7 @@ class Login extends Controller
         $user = $db->query($queryStatement)->getRow();
 
         if (!$user || !password_verify($password, $user->password)) {
-            session()->setFlashdata('errorMessage', "Invalid email or password");
+            $this->session->setFlashdata('errorMessage', "Invalid email or password");
 
             return redirect()->to('/login');
         }

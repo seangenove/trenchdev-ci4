@@ -14,6 +14,7 @@ namespace App\Controllers;
  * @package CodeIgniter
  */
 
+use App\Helpers\Auth;
 use CodeIgniter\Controller;
 
 class BaseController extends Controller
@@ -40,7 +41,7 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.:
-		// $this->session = \Config\Services::session();
+        $this->session = \Config\Services::session();
 	}
 
 }
