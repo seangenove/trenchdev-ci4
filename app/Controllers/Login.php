@@ -11,7 +11,7 @@ class Login extends BaseController
     {
         if (Auth::user()) {
             // Not authenticated
-            return redirect()->to('/portfolio');
+            return redirect()->to('/');
         }
 
         $data = [];
@@ -47,7 +47,7 @@ class Login extends BaseController
 
         Auth::login($user);
 
-        return redirect()->to("/portfolio");
+        return redirect()->to("/");
     }
 
     public function logout()

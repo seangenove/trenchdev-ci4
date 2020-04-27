@@ -31,11 +31,13 @@
 
                             <div class="card-body">
                                 <?php if (session()->get('errorMessage')) : ?>
+
                                     <div class="row justify-content-center">
                                         <p class="text-danger">
                                             <?= session()->get('errorMessage') ?>
                                         </p>
                                     </div>
+
                                 <?php endif; ?>
 
                                 <form action="/login/authenticate" method="post">

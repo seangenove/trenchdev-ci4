@@ -6,12 +6,7 @@
                     <div class="footer-brand">Trenchdev</div>
                     <div class="mb-3">Dev into the trenches</div>
                     <div class="icon-list-social mb-5">
-                        <a class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-instagram"></i></a><a
-                                class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-facebook"></i></a><a
-                                class="icon-list-social-link" href="javascript:void(0);"><i
-                                    class="fab fa-github"></i></a><a class="icon-list-social-link"
-                                                                     href="javascript:void(0);"><i
-                                    class="fab fa-twitter"></i></a>
+                        <a class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-instagram"></i></a><a class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-facebook"></i></a><a class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-github"></i></a><a class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -34,9 +29,9 @@
                     </div>
                 </div>
             </div>
-            <hr class="my-5"/>
+            <hr class="my-5" />
             <div class="row align-items-center">
-                <div class="col-md-6 small">Copyright &copy; Trenchdev 2020</div>
+                <div class="col-md-6 small">Copyright &copy; Your Website 2020</div>
                 <div class="col-md-6 text-md-right small">
                     <a href="javascript:void(0);">Privacy Policy</a>
                     &middot;

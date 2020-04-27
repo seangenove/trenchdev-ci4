@@ -11,7 +11,7 @@ class Register extends BaseController
     {
         if (Auth::user()) {
             // Not authenticated
-            return redirect()->to('/portfolio');
+            return redirect()->to('/');
         }
 
         $data = [];

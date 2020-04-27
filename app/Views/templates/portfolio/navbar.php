@@ -6,7 +6,7 @@
                 data-feather="menu"></i></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-lg-5">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home </a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Home </a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="/login/logout">Logout</a></li>
